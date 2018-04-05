@@ -125,6 +125,10 @@ def load_jinja(path, tests, filters, classes, trim_blocks, lstrip_blocks, keep_t
     from jinja2 import Environment, FileSystemLoader
     from jinja2 import Undefined, StrictUndefined
     jinja = Environment(
+        block_start_string = '<%',
+        block_end_string = '%>',
+        variable_start_string = '<<',
+        variable_end_string = '>>',
         loader=FileSystemLoader(path),
         extensions=classes,
         trim_blocks=trim_blocks,
